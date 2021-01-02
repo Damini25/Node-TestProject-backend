@@ -1,0 +1,42 @@
+extends layouts/mainLayout.pug
+
+block styles
+    link(rel="stylesheet" href="/css/main.css")
+    link(rel="stylesheet" href="/css/product.css")
+block content
+    main
+        h1 My Products
+        h3 List of all products
+            if prods.length > 0
+                ul
+                    each products in prods
+                        li #{products.title}
+            else
+                p No Products
+
+
+//- <!DOCTYPE html>
+//- html(lang="en")
+//-     head
+//-         meta(charset="UTF-8")
+//-         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+//-         title #{docTitle}
+//-         link(rel="stylesheet" href="/css/main.css")
+//-         link(rel="stylesheet" href="/css/product.css")
+//-     body
+//-         header.main-header
+//-             nav.main-header__nav
+//-                 ul.main-header__item-list
+//-                     li.main-header__item
+//-                         a.active(href="/") Shop
+//-                     li.main-header__item
+//-                         a(href="/admin/addProduct") Add Product
+//-         main
+//-             h1 My Products
+//-             h3 List of all products
+//-             if prods.length > 0
+//-                 ul
+//-                     each products in prods
+//-                         li #{products.title}
+//-             else
+//-                     p No Products
